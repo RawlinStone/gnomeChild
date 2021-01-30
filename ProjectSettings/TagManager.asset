@@ -47,6 +47,9 @@ TagManager:
   - name: Lighting
     uniqueID: 1046813755
     locked: 0
+  - name: Platforms
+    uniqueID: 3854753133
+    locked: 0
   - name: Player
     uniqueID: 332973173
     locked: 0
