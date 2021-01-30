@@ -462,6 +462,8 @@ MonoBehaviour:
   isGrounded: 1
   myAnimator: {fileID: 1372686208}
   myRenderer: {fileID: 1372686205}
+  crouch: 0
+  jump: 0
 --- !u!95 &1372686208
 Animator:
   serializedVersion: 3
