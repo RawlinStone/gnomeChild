@@ -7,6 +7,8 @@ public class Item : ScriptableObject
 {
     public new string name;
     public Sprite sprite;
+    //gem or key
+    public string type;
 
    
 }

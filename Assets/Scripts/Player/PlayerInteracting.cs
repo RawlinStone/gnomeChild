@@ -10,6 +10,7 @@ public class PlayerInteracting : MonoBehaviour
     public Item currentInteractable;
     public InventoryManager inventoryManager;
     public GameObject overworldObject;
+    public InventoryUI myInventoryUI;
 
 
 
@@ -23,6 +24,10 @@ public class PlayerInteracting : MonoBehaviour
         if(Input.GetButtonDown("Interact") && canInteract)
         {
             inventoryManager.myInventory.AddItem(currentInteractable);
+            if(currentInteractable.type == "GEM")
+            {
+                myInventoryUI.UpdateGems(inventoryManager.myInventory.GetGems());
+            }
             ClearInteractable();
         }
     }

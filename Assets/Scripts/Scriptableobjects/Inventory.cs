@@ -5,20 +5,47 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Inventory : ScriptableObject
 {
-    public List<Item> inventory;
+    public List<Item> keys;
+    public List<Item> gems;
 
     public void AddItem(Item i)
     {
-        inventory.Add(i);
+        if(i.type == "GEM")
+        {
+            gems.Add(i);
+        }
+        else if(i.type == "KEY")
+        {
+            keys.Add(i);
+        }
+        
     }
 
     public void DeleteItem(Item i)
     {
-        inventory.Remove(i);
+        if (i.type == "GEM")
+        {
+            gems.Remove(i);
+        }
+        else if (i.type == "KEY")
+        {
+            keys.Remove(i);
+        }
     }
 
     public void ClearInventory()
     {
-        inventory.Clear();
+        keys.Clear();
+        gems.Clear();
+    }
+
+    public List<Item> GetGems()
+    {
+        return gems;
+    }
+
+    public List<Item> GetKeys()
+    {
+        return keys;
     }
 }

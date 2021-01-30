@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb802f643a9fde45b421354cddeb30b, type: 3}
-  m_Name: Inventory
+  m_Script: {fileID: 11500000, guid: 8642ca7c9294a5f48b838bb11504daac, type: 3}
+  m_Name: Sapphire
   m_EditorClassIdentifier: 
-  keys: []
-  gems: []
+  name: Sapphire
+  sprite: {fileID: 21300000, guid: bcac1e6c56ece2947b9ebd40f2446272, type: 3}
+  type: GEM

@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8642ca7c9294a5f48b838bb11504daac, type: 3}
-  m_Name: GreenJewel
+  m_Name: Ruby
   m_EditorClassIdentifier: 
-  name: GreenJewel
-  sprite: {fileID: 21300000, guid: caed5d11ea4c4a74bbc51206e6ddd377, type: 3}
+  name: Ruby
+  sprite: {fileID: 21300000, guid: 34b8dc7f2ac0e814fa4d5b9115aed890, type: 3}
+  type: GEM

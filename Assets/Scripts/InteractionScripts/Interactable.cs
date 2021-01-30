@@ -6,10 +6,13 @@ public class Interactable : MonoBehaviour
 {
     private PlayerInteracting myPlayer;
     public Item myItem;
+    public SpriteRenderer myRenderer;
+    
 
     private void Start()
     {
         myPlayer = FindObjectOfType<PlayerInteracting>();
+        myRenderer.sprite = myItem.sprite;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
