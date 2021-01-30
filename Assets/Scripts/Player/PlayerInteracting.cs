@@ -12,7 +12,11 @@ public class PlayerInteracting : MonoBehaviour
     public GameObject overworldObject;
     public InventoryUI myInventoryUI;
 
-
+    void Start()
+    {
+        myInventoryUI.UpdateGems(inventoryManager.myInventory.GetGems());
+        myInventoryUI.UpdateKeys(inventoryManager.myInventory.GetKeys());
+    }
 
     private void Update()
     {
@@ -27,6 +31,10 @@ public class PlayerInteracting : MonoBehaviour
             if(currentInteractable.type == "GEM")
             {
                 myInventoryUI.UpdateGems(inventoryManager.myInventory.GetGems());
+            }
+            else if(currentInteractable.type == "KEY")
+            {
+                myInventoryUI.UpdateKeys(inventoryManager.myInventory.GetKeys());
             }
             ClearInteractable();
         }

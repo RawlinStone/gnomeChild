@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class InventoryUI : MonoBehaviour
 {
     //0:Ruby, 1:Sapphire, 2:Emerald
     public List<Image> myGemsUI;
+    public TextMeshProUGUI keyCount;
 
 
     public void UpdateGems(List<Item> myGems)
@@ -26,6 +28,11 @@ public class InventoryUI : MonoBehaviour
                 myGemsUI[2].gameObject.SetActive(true);
             }
         }
+    }
+
+    public void UpdateKeys(List<Item> myKeys)
+    {
+        keyCount.text = myKeys.Count.ToString();
     }
 
 }
