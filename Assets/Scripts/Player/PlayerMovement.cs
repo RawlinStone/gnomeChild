@@ -7,7 +7,10 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float jumpForce;
     public bool isGrounded = true;
+    public Animator myAnimator;
+    public SpriteRenderer myRenderer;
     private Rigidbody2D rb;
+    
 
     void Start() => rb = this.gameObject.GetComponent<Rigidbody2D>();
 
@@ -19,7 +22,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMove()
     {
-        transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, 0) * Time.deltaTime * speed; 
+        float movement = Input.GetAxis("Horizontal");
+        if(movement > 0)
+        {
+            myRenderer.flipX = false; 
+        }
+        else if(movement < 0)
+        {
+            myRenderer.flipX = true;
+        }
+
+        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * speed;
+        myAnimator.SetFloat("speed", Mathf.Abs(movement)); 
+
     }
 
     private void OnJump()
