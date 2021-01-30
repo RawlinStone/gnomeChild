@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private bool crouch;
     [SerializeField]
     private bool jump;
+    private Vector3 scaleInitial = new Vector3(2f, 2f, 2f);
 
 
 
@@ -40,18 +41,19 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove()
     {
         float movement = Input.GetAxis("Horizontal");
-        if(movement > 0)
+        Vector3 characterScale = transform.localScale;
+        if (movement > 0)
         {
-            myRenderer.flipX = false; 
+            characterScale.x = scaleInitial.x;
         }
-        else if(movement < 0)
+        else if (movement < 0)
         {
-            myRenderer.flipX = true;
+            characterScale.x = scaleInitial.x * -1;
         }
-
-        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * currentSpeed;
+        transform.localScale = characterScale;
+        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * speed;
         myAnimator.SetFloat("speed", Mathf.Abs(movement));
-        myAnimator.SetBool("isCrouching", crouch); 
+        myAnimator.SetBool("isCrouching", crouch);
 
     }
 
