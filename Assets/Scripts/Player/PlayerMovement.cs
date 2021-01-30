@@ -32,15 +32,17 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove()
     {
         float movement = Input.GetAxis("Horizontal");
+        //edited slightly bc you were just transforming the sprite and not the character.
+        Vector3 characterScale = transform.localScale;
         if(movement > 0)
         {
-            myRenderer.flipX = false; 
+            characterScale.x = 2;
         }
         else if(movement < 0)
         {
-            myRenderer.flipX = true;
+            characterScale.x = -2;
         }
-
+        transform.localScale = characterScale;
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * speed;
         myAnimator.SetFloat("speed", Mathf.Abs(movement));
         myAnimator.SetBool("isCrouching", crouch); 
