@@ -8,6 +8,8 @@ public class PlayerInteracting : MonoBehaviour
     public GameObject myThinkingBubble;
     public SpriteRenderer currentSprite;
     public Item currentInteractable;
+    public InventoryManager inventoryManager;
+    public GameObject overworldObject;
 
 
 
@@ -20,7 +22,8 @@ public class PlayerInteracting : MonoBehaviour
     {
         if(Input.GetButtonDown("Interact") && canInteract)
         {
-            Debug.Log("We have interaction");
+            inventoryManager.myInventory.AddItem(currentInteractable);
+            ClearInteractable();
         }
     }
 
@@ -39,5 +42,8 @@ public class PlayerInteracting : MonoBehaviour
     private void ClearInteractable()
     {
         currentInteractable = null;
+        HideInteraction();
+        Destroy(overworldObject);
+
     }
 }

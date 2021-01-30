@@ -18,6 +18,7 @@ public class Interactable : MonoBehaviour
             myPlayer.canInteract = true;
             myPlayer.currentInteractable = myItem;
             myPlayer.DisplayInteraction();
+            myPlayer.overworldObject = this.gameObject;
         }
 
         
@@ -30,6 +31,7 @@ public class Interactable : MonoBehaviour
             myPlayer.canInteract = false;
             myPlayer.currentInteractable = null;
             myPlayer.HideInteraction();
+            myPlayer.overworldObject = null;
         }
     }
 }
