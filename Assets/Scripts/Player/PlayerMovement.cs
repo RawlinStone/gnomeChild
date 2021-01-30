@@ -14,7 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private bool crouch;
     [SerializeField]
     private bool jump;
-    
+    [SerializeField]
+    private Vector3 scaleInitial = new Vector3 (2f, 2f, 2f);
 
     void Start() => rb = this.gameObject.GetComponent<Rigidbody2D>();
 
@@ -32,15 +33,14 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove()
     {
         float movement = Input.GetAxis("Horizontal");
-        //edited slightly bc you were just transforming the sprite and not the character.
         Vector3 characterScale = transform.localScale;
         if(movement > 0)
         {
-            characterScale.x = 2;
+            characterScale.x = scaleInitial.x;
         }
         else if(movement < 0)
         {
-            characterScale.x = -2;
+            characterScale.x = scaleInitial.x * -1;
         }
         transform.localScale = characterScale;
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * speed;
