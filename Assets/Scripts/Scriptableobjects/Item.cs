@@ -13,6 +13,7 @@ public class Item : ScriptableObject
     public string color;
     public bool isOpen;
     public Item keyNeeded;
+    public string levelName;
 
    
 }
