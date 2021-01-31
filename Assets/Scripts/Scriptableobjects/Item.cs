@@ -9,6 +9,7 @@ public class Item : ScriptableObject
     public Sprite sprite;
     //gem or key
     public string type;
+    public string color;
 
    
 }

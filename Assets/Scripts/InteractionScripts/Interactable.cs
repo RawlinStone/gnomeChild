@@ -7,12 +7,28 @@ public class Interactable : MonoBehaviour
     private PlayerInteracting myPlayer;
     public Item myItem;
     public SpriteRenderer myRenderer;
+    public Inventory playerInventory;
     
 
     private void Start()
     {
         myPlayer = FindObjectOfType<PlayerInteracting>();
         myRenderer.sprite = myItem.sprite;
+        if(myItem.type == "GEM")
+        {
+            if (playerInventory.GetGems().Contains(myItem))
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        else if(myItem.type == "KEY")
+        {
+            if (playerInventory.GetKeys().Contains(myItem))
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
