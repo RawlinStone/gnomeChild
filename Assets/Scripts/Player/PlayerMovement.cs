@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 scaleInitial = new Vector3(2f, 2f, 2f);
 
 
-
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
@@ -31,7 +30,8 @@ public class PlayerMovement : MonoBehaviour
     {
         OnMove();
         CheckLanding();
-        OnJump();
+        if(!RopeSystem.rappel)
+            OnJump();
         OnCrouch();
         CheckCrouching(crouch);
        
