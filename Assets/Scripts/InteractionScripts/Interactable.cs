@@ -9,6 +9,7 @@ public class Interactable : MonoBehaviour
     public SpriteRenderer myRenderer;
     public Inventory playerInventory;
     public Sprite doorOpenSprite;
+    public List<Sprite> bigDoorSprites;
     
 
     private void Start()
@@ -33,12 +34,24 @@ public class Interactable : MonoBehaviour
         {
             if (myItem.isOpen)
             {
-                myRenderer.sprite = doorOpenSprite;
+                OpenDoor();
+            }
+        }
+        else if(myItem.type == "BIG")
+        {
+            if (myItem.isOpen)
+            {
+                OpenDoor();
+            }
+            else
+            {
+                UpdateBigDoor();
             }
         }
 
 
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -66,6 +79,11 @@ public class Interactable : MonoBehaviour
             myPlayer.HideInteraction();
             myPlayer.overworldObject = null;
         }
+    }
+
+    public void UpdateBigDoor()
+    {
+        myRenderer.sprite = bigDoorSprites[myItem.gemsBig.Count];
     }
 
     public void OpenDoor()

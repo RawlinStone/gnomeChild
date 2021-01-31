@@ -14,6 +14,7 @@ public class Item : ScriptableObject
     public bool isOpen;
     public Item keyNeeded;
     public string levelName;
+    public List<Item> gemsBig;
 
    
 }

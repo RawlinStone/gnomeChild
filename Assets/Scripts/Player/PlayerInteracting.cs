@@ -14,6 +14,7 @@ public class PlayerInteracting : MonoBehaviour
     public GameObject overworldObject;
     public InventoryUI myInventoryUI;
     public Sprite defaultKey;
+    public List<Sprite> bigDoorSprites;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class PlayerInteracting : MonoBehaviour
             if(currentInteractable.type == "GEM")
             {
                 myInventoryUI.UpdateGems(inventoryManager.myInventory.GetGems());
+                
                 ClearInteractable();
             }
             else if(currentInteractable.type == "KEY")
@@ -54,6 +56,34 @@ public class PlayerInteracting : MonoBehaviour
                 else if (currentInteractable.isOpen)
                 {
                     SceneManager.LoadScene(currentInteractable.levelName); 
+                }
+            }
+            else if(currentInteractable.type == "BIG")
+            {
+                if (!currentInteractable.isOpen)
+                {
+                    if(currentInteractable.gemsBig.Count >= 4)
+                    {
+                        currentInteractable.isOpen = true; 
+                        overworldObject.GetComponent<Interactable>().OpenDoor();
+                    }
+                    else
+                    {
+                        foreach (Item i in inventoryManager.myInventory.GetGems())
+                        {
+                            if (!currentInteractable.gemsBig.Contains(i))
+                            {
+                                currentInteractable.gemsBig.Add(i);
+                            }
+                        }
+                        overworldObject.GetComponent<Interactable>().UpdateBigDoor();
+                    }
+                    
+                }
+                else
+                {
+                    //go to final place
+                    Debug.Log("Going to final destination");
                 }
             }
             
