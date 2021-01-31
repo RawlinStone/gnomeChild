@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded = true;
     public Animator myAnimator;
     public SpriteRenderer myRenderer;
-    public BoxCollider2D myCollider;
+   
     private Rigidbody2D rb;
     [SerializeField]
     private bool crouch;
@@ -75,15 +75,13 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Crouch") && !jump)
         {
             crouch = true;
-            myCollider.offset = new Vector2(myCollider.offset.x,-0.0158636f);
-            myCollider.size = new Vector2(myCollider.size.x, 0.2660642f);
+            
 
         }
         else if(Input.GetButtonUp("Crouch"))
         {
             crouch = false;
-           myCollider.offset = new Vector2(myCollider.offset.x, -0.001397848f);
-            myCollider.size = new Vector2(myCollider.size.x, 0.2783778f);
+           
 
         }
     }
