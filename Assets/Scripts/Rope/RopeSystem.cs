@@ -184,7 +184,7 @@ public class RopeSystem : MonoBehaviour
             rappel = true;
             if (ropeHingeAnchorSprite.transform.position.y > transform.position.y)
                 this.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
-            transform.position = Vector2.MoveTowards(transform.position, ropeHingeAnchorSprite.transform.position, 0.03f);
+            transform.position = Vector2.MoveTowards(transform.position, ropeHingeAnchorSprite.transform.position, 0.1f);
         }
         else
         {
