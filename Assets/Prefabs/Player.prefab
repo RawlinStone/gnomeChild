@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 7913880655935290880}
   - component: {fileID: 6232379768311658586}
   - component: {fileID: 4852624281711429859}
+  - component: {fileID: 7963096384686824067}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -619,6 +620,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myInventory: {fileID: 11400000, guid: 7791ff407172596479917ec3ae0ded48, type: 2}
+--- !u!114 &7963096384686824067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913880655935290895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f8e9f5308ee1d4391f1da3d8eaf8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myOptions: {fileID: 2635870986321211793, guid: 4515c29a63fc17c419d3bc43375c1bf9,
+    type: 3}
+  playerMovement: {fileID: 7913880655935290885}
+  ropeSystem: {fileID: 7913880655935290881}
+  playerInteracting: {fileID: 6232379768311658586}
 --- !u!1 &8543805478452296837
 GameObject:
   m_ObjectHideFlags: 0
