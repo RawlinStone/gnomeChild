@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   keys:
-  - {fileID: 11400000, guid: 5c677abf0ce6dc84692eaf61b721a711, type: 2}
-  - {fileID: 11400000, guid: 8a01771a7c823c645b0976944a7d63d9, type: 2}
   - {fileID: 11400000, guid: 7fbc0639b72bf1040833009b308d71c6, type: 2}
-  gems: []
+  gems:
+  - {fileID: 11400000, guid: 45ca7033ef50fad488a8e8d4124acdd5, type: 2}
+  - {fileID: 11400000, guid: 42fb1b20ed96a3e4c8e1484c352edd4f, type: 2}
+  - {fileID: 11400000, guid: bede47ca677c2b54190130cc17251313, type: 2}
+  - {fileID: 11400000, guid: 3ba6adc9b38d7504db181a40033d5bce, type: 2}

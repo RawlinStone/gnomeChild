@@ -15,6 +15,9 @@ public class PlayerInteracting : MonoBehaviour
     public InventoryUI myInventoryUI;
     public Sprite defaultKey;
     public List<Sprite> bigDoorSprites;
+    //0:big door, 1:regualr door, 2:gem placement
+    public List<AudioClip> audioClips;
+    public AudioSource audioSource;
     
 
     void Start()
@@ -49,6 +52,9 @@ public class PlayerInteracting : MonoBehaviour
                 if (inventoryManager.myInventory.GetKeys().Contains(currentInteractable.keyNeeded) && !currentInteractable.isOpen)
                 {
                     //open door
+                    //PLAY SOUND
+                    audioSource.clip = audioClips[1];
+                    audioSource.Play();
                     currentInteractable.isOpen = true;
                     overworldObject.GetComponent<Interactable>().OpenDoor();
                     overworldObject.GetComponent<Interactable>().PlayParticle(); 
@@ -67,6 +73,9 @@ public class PlayerInteracting : MonoBehaviour
                     if(currentInteractable.gemsBig.Count >= 4)
                     {
                         currentInteractable.isOpen = true;
+                        //PLAY SOUND
+                        audioSource.clip = audioClips[0];
+                        audioSource.Play();
                         overworldObject.GetComponent<Interactable>().OpenDoor();
                         overworldObject.GetComponent<Interactable>().PlayParticle();
                     }
@@ -76,6 +85,9 @@ public class PlayerInteracting : MonoBehaviour
                         {
                             if (!currentInteractable.gemsBig.Contains(i))
                             {
+                                //PLAY SOUND
+                                audioSource.clip = audioClips[2];
+                                audioSource.Play();
                                 currentInteractable.gemsBig.Add(i);
                             }
                         }
