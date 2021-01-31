@@ -8,6 +8,7 @@ public class Interactable : MonoBehaviour
     public Item myItem;
     public SpriteRenderer myRenderer;
     public Inventory playerInventory;
+    public Sprite doorOpenSprite;
     
 
     private void Start()
@@ -28,7 +29,15 @@ public class Interactable : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        
+        else if (myItem.type == "DOOR")
+        {
+            if (myItem.isOpen)
+            {
+                myRenderer.sprite = doorOpenSprite;
+            }
+        }
+
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,8 +45,13 @@ public class Interactable : MonoBehaviour
         {
             myPlayer.canInteract = true;
             myPlayer.currentInteractable = myItem;
-            myPlayer.DisplayInteraction();
             myPlayer.overworldObject = this.gameObject;
+            if (!myItem.isOpen)
+            {
+                myPlayer.DisplayInteraction();
+            }
+            
+            
         }
 
         
@@ -52,5 +66,10 @@ public class Interactable : MonoBehaviour
             myPlayer.HideInteraction();
             myPlayer.overworldObject = null;
         }
+    }
+
+    public void OpenDoor()
+    {
+        myRenderer.sprite = doorOpenSprite;
     }
 }

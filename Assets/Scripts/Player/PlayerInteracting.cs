@@ -11,6 +11,7 @@ public class PlayerInteracting : MonoBehaviour
     public InventoryManager inventoryManager;
     public GameObject overworldObject;
     public InventoryUI myInventoryUI;
+    public Sprite defaultKey;
 
     void Start()
     {
@@ -31,19 +32,44 @@ public class PlayerInteracting : MonoBehaviour
             if(currentInteractable.type == "GEM")
             {
                 myInventoryUI.UpdateGems(inventoryManager.myInventory.GetGems());
+                ClearInteractable();
             }
             else if(currentInteractable.type == "KEY")
             {
                 myInventoryUI.UpdateKeys(inventoryManager.myInventory.GetKeys());
+                ClearInteractable();
             }
-            ClearInteractable();
+            else if(currentInteractable.type == "DOOR")
+            {
+                if (inventoryManager.myInventory.GetKeys().Contains(currentInteractable.keyNeeded) && !currentInteractable.isOpen)
+                {
+                    //open door
+                    currentInteractable.isOpen = true;
+                    overworldObject.GetComponent<Interactable>().OpenDoor();
+                    HideInteraction();
+
+                }
+                else if (currentInteractable.isOpen)
+                {
+                    Debug.Log("Go to next area");
+                }
+            }
+            
         }
     }
 
     public void DisplayInteraction()
     {
         myThinkingBubble.SetActive(true);
-        currentSprite.sprite = currentInteractable.sprite;
+        if(currentInteractable.type == "DOOR" && !currentInteractable.isOpen)
+        {
+            currentSprite.sprite = defaultKey;
+        }
+        else
+        {
+            currentSprite.sprite = currentInteractable.sprite;
+        }
+        
     }
 
     public void HideInteraction()
