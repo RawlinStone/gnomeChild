@@ -77,6 +77,7 @@ public class RopeSystem : MonoBehaviour
             if (hit.collider != null)
             {
                 ropeAttached = true;
+
                 if (!ropePositions.Contains(hit.point))
                 {
                     ropePositions.Add(hit.point);
@@ -91,6 +92,7 @@ public class RopeSystem : MonoBehaviour
                 ropeAttached = false;
                 ropeJoint.enabled = false;
             }
+            
         }
 
         if (Input.GetMouseButton(1))
@@ -178,7 +180,7 @@ public class RopeSystem : MonoBehaviour
             rappel = true;
             if (ropeHingeAnchorSprite.transform.position.y > player.transform.position.y)
                 this.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
-            player.transform.position = Vector2.MoveTowards(player.transform.position, ropeHingeAnchorSprite.transform.position, 0.1f);
+            player.transform.position = Vector2.MoveTowards(player.transform.position, ropeHingeAnchorSprite.transform.position, 0.175f);
         }
         else
         {
