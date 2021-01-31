@@ -486,7 +486,7 @@ MonoBehaviour:
   ropeLayerMask:
     serializedVersion: 2
     m_Bits: 769
-  crosshairDistance: 2.5
+  crosshairDistance: 2.75
   player: {fileID: 0}
   myClips:
   - {fileID: 8300000, guid: 172096b1ff55fce4a8a4450679bb069e, type: 3}
