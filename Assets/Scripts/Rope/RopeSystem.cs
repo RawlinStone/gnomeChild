@@ -21,6 +21,8 @@ public class RopeSystem : MonoBehaviour
     [SerializeField]
     private float crosshairDistance = 2.5f;
     public Transform player;
+    public List<AudioClip> myClips;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -71,6 +73,8 @@ public class RopeSystem : MonoBehaviour
         {
             if (ropeAttached) return;
             ropeRenderer.enabled = true;
+            audioSource.clip = myClips[0];
+            audioSource.Play(); 
 
             var hit = Physics2D.Raycast(player.transform.position, aimDirection, ropeMaxCastDistance, ropeLayerMask);
             
@@ -103,6 +107,8 @@ public class RopeSystem : MonoBehaviour
     
     private void ResetRope()
     {
+        audioSource.clip = myClips[1];
+        audioSource.Play();
         ropeJoint.enabled = false;
         ropeAttached = false;
         ropeRenderer.positionCount = 2;
