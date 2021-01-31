@@ -9,9 +9,7 @@ public class RopeSystem : MonoBehaviour
     public DistanceJoint2D ropeJoint;
     public Transform crosshair;
     public SpriteRenderer crosshairSprite;
-    public PlayerMovement playerMovement;
     private bool ropeAttached;
-    private Vector2 playerPosition;
     private Rigidbody2D ropeHingeAnchorRb;
     private SpriteRenderer ropeHingeAnchorSprite;
     public LineRenderer ropeRenderer;
@@ -22,12 +20,12 @@ public class RopeSystem : MonoBehaviour
     public static bool rappel;
     [SerializeField]
     private float crosshairDistance = 2.5f;
+    public Transform player;
 
     private void Awake()
     {
         rappel = false;
         ropeJoint.enabled = false;
-        playerPosition = transform.position;
         ropeHingeAnchorRb = ropeHingeAnchor.GetComponent<Rigidbody2D>();
         ropeHingeAnchorSprite = ropeHingeAnchor.GetComponent<SpriteRenderer>();
     }
@@ -35,7 +33,7 @@ public class RopeSystem : MonoBehaviour
     private void FixedUpdate()
     {
         var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
-        var facingDirection = worldMousePosition - transform.position;
+        var facingDirection = worldMousePosition - player.transform.position;
         var aimAngle = Mathf.Atan2(facingDirection.y, facingDirection.x);
         if (aimAngle < 0f)
         {
@@ -43,8 +41,6 @@ public class RopeSystem : MonoBehaviour
         }
 
         var aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
-
-        playerPosition = transform.position;
 
         if(!ropeAttached)
             SetCrosshairPosition(aimAngle);
@@ -62,10 +58,10 @@ public class RopeSystem : MonoBehaviour
         if (!crosshairSprite.enabled)
             crosshairSprite.enabled = true;
 
-        var x = transform.position.x + crosshairDistance * Mathf.Cos(aimAngle);
-        var y = transform.position.y + crosshairDistance * Mathf.Sin(aimAngle);
+        var x = player.transform.position.x + crosshairDistance * Mathf.Cos(aimAngle);
+        var y = player.transform.position.y + crosshairDistance * Mathf.Sin(aimAngle);
 
-        var crossHairPosition = new Vector3(x, y, 0);
+        var crossHairPosition = new Vector3(x, y, -1);
         crosshair.transform.position = crossHairPosition;
     }
     
@@ -76,17 +72,15 @@ public class RopeSystem : MonoBehaviour
             if (ropeAttached) return;
             ropeRenderer.enabled = true;
 
-            var hit = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, ropeLayerMask);
+            var hit = Physics2D.Raycast(player.transform.position, aimDirection, ropeMaxCastDistance, ropeLayerMask);
             
             if (hit.collider != null)
             {
                 ropeAttached = true;
                 if (!ropePositions.Contains(hit.point))
                 {
-                    // Jump slightly to distance the player a little from the ground after grappling to something.
-                    //transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 2f), ForceMode2D.Impulse);
                     ropePositions.Add(hit.point);
-                    ropeJoint.distance = Vector2.Distance(playerPosition, hit.point);
+                    ropeJoint.distance = Vector2.Distance(player.transform.position, hit.point);
                     ropeJoint.enabled = true;
                     ropeHingeAnchorSprite.enabled = true;
                 }
@@ -110,8 +104,8 @@ public class RopeSystem : MonoBehaviour
         ropeJoint.enabled = false;
         ropeAttached = false;
         ropeRenderer.positionCount = 2;
-        ropeRenderer.SetPosition(0, transform.position);
-        ropeRenderer.SetPosition(1, transform.position);
+        ropeRenderer.SetPosition(0, player.transform.position);
+        ropeRenderer.SetPosition(1, player.transform.position);
         ropePositions.Clear();
         ropeHingeAnchorSprite.enabled = false;
         rappel = false;
@@ -140,7 +134,7 @@ public class RopeSystem : MonoBehaviour
                         ropeHingeAnchorRb.transform.position = ropePosition;
                         if (!distanceSet)
                         {
-                            ropeJoint.distance = Vector2.Distance(transform.position, ropePosition);
+                            ropeJoint.distance = Vector2.Distance(player.transform.position, ropePosition);
                             distanceSet = true;
                         }
                     }
@@ -149,7 +143,7 @@ public class RopeSystem : MonoBehaviour
                         ropeHingeAnchorRb.transform.position = ropePosition;
                         if (!distanceSet)
                         {
-                            ropeJoint.distance = Vector2.Distance(transform.position, ropePosition);
+                            ropeJoint.distance = Vector2.Distance(player.transform.position, ropePosition);
                             distanceSet = true;
                         }
                     }
@@ -160,18 +154,18 @@ public class RopeSystem : MonoBehaviour
                     ropeHingeAnchorRb.transform.position = ropePosition;
                     if (!distanceSet)
                     {
-                        ropeJoint.distance = Vector2.Distance(transform.position, ropePosition);
+                        ropeJoint.distance = Vector2.Distance(player.transform.position, ropePosition);
                         distanceSet = true;
                     }
                 }
             }
             else
             {
-                ropeRenderer.SetPosition(i, transform.position);
+                ropeRenderer.SetPosition(i, player.transform.position);
             }
         }
 
-        if (Vector2.Distance(transform.position, ropeHingeAnchorSprite.transform.position) > 8.0f)
+        if (Vector2.Distance(player.transform.position, ropeHingeAnchorSprite.transform.position) > 8.0f)
         {
             ResetRope();
         }
@@ -182,9 +176,9 @@ public class RopeSystem : MonoBehaviour
         if (Input.GetMouseButton(0) && ropeAttached)
         {
             rappel = true;
-            if (ropeHingeAnchorSprite.transform.position.y > transform.position.y)
+            if (ropeHingeAnchorSprite.transform.position.y > player.transform.position.y)
                 this.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
-            transform.position = Vector2.MoveTowards(transform.position, ropeHingeAnchorSprite.transform.position, 0.1f);
+            player.transform.position = Vector2.MoveTowards(player.transform.position, ropeHingeAnchorSprite.transform.position, 0.1f);
         }
         else
         {
