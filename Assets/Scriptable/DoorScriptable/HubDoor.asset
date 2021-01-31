@@ -19,3 +19,4 @@ MonoBehaviour:
   isOpen: 1
   keyNeeded: {fileID: 0}
   levelName: _mainHub
+  gemsBig: []
