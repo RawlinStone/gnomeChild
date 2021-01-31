@@ -17,7 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private bool crouch;
     [SerializeField]
     private bool jump;
-    private Vector3 scaleInitial = new Vector3(2f, 2f, 2f);
+    [SerializeField]
+    private Vector3 scaleInitial = new Vector3(1f, 1f, 1f);
 
 
     void Start()
