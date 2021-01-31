@@ -30,7 +30,7 @@ public class RopeSystem : MonoBehaviour
         ropeHingeAnchorSprite = ropeHingeAnchor.GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
         var facingDirection = worldMousePosition - transform.position;
@@ -61,7 +61,7 @@ public class RopeSystem : MonoBehaviour
         {
             rappel = true;
             this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-            transform.position = Vector2.MoveTowards(transform.position, ropeHingeAnchorSprite.transform.position, 0.05f);
+            transform.position = Vector2.MoveTowards(transform.position, ropeHingeAnchorSprite.transform.position, 0.03f);
         }
         else
         {
