@@ -16,7 +16,7 @@ public class RopeSystem : MonoBehaviour
     private SpriteRenderer ropeHingeAnchorSprite;
     public LineRenderer ropeRenderer;
     public LayerMask ropeLayerMask;
-    private float ropeMaxCastDistance = 20f;
+    private float ropeMaxCastDistance = 8f;
     private List<Vector2> ropePositions = new List<Vector2>();
     private bool distanceSet;
     public static bool rappel;
@@ -53,22 +53,6 @@ public class RopeSystem : MonoBehaviour
         UpdateRopePositions();
         rappelling();
 
-    }
-
-    private void rappelling()
-    {
-        if(Input.GetMouseButton(0) && ropeAttached)
-        {
-            rappel = true;
-            if(ropeHingeAnchorSprite.transform.position.y > transform.position.y)
-                this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-            transform.position = Vector2.MoveTowards(transform.position, ropeHingeAnchorSprite.transform.position, 0.03f);
-        }
-        else
-        {
-            rappel = false;
-            this.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
-        }
     }
 
     private void SetCrosshairPosition(float aimAngle)
@@ -128,6 +112,7 @@ public class RopeSystem : MonoBehaviour
         ropeRenderer.SetPosition(1, transform.position);
         ropePositions.Clear();
         ropeHingeAnchorSprite.enabled = false;
+        rappel = false;
     }
 
     private void UpdateRopePositions()
@@ -136,11 +121,8 @@ public class RopeSystem : MonoBehaviour
         {
             return;
         }
-        
-        ropeRenderer.positionCount = ropePositions.Count + 1;
 
-        if (ropePositions.Count > 10)
-            ResetRope();
+        ropeRenderer.positionCount = ropePositions.Count + 1;
 
         for (var i = ropeRenderer.positionCount - 1; i >= 0; i--)
         {
@@ -185,6 +167,27 @@ public class RopeSystem : MonoBehaviour
             {
                 ropeRenderer.SetPosition(i, transform.position);
             }
+        }
+
+        if (Vector2.Distance(transform.position, ropeHingeAnchorSprite.transform.position) > 8.0f)
+        {
+            ResetRope();
+        }
+    }
+
+    private void rappelling()
+    {
+        if (Input.GetMouseButton(0) && ropeAttached)
+        {
+            rappel = true;
+            if (ropeHingeAnchorSprite.transform.position.y > transform.position.y)
+                this.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
+            transform.position = Vector2.MoveTowards(transform.position, ropeHingeAnchorSprite.transform.position, 0.03f);
+        }
+        else
+        {
+            rappel = false;
+            this.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
         }
     }
 }
