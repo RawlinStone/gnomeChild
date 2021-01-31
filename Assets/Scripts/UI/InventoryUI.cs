@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    //0:Ruby, 1:Sapphire, 2:Emerald
+    //0:Ruby, 1:Sapphire, 2:Emerald, 3:Amethyst
     public List<Image> myGemsUI;
-    public TextMeshProUGUI keyCount;
+    public List<Image> myKeysUI;
 
 
     public void UpdateGems(List<Item> myGems)
@@ -27,12 +27,34 @@ public class InventoryUI : MonoBehaviour
             {
                 myGemsUI[2].gameObject.SetActive(true);
             }
+            if(gem.name == "Amethyst")
+            {
+                myGemsUI[3].gameObject.SetActive(true);
+            }
         }
     }
 
     public void UpdateKeys(List<Item> myKeys)
     {
-        keyCount.text = myKeys.Count.ToString();
+        foreach(Item key in myKeys)
+        {
+            if (key.color == "RED")
+            {
+                myKeysUI[0].gameObject.SetActive(true);
+            }
+            if (key.color == "BLUE")
+            {
+                myKeysUI[1].gameObject.SetActive(true);
+            }
+            if (key.color == "GREEN")
+            {
+                myKeysUI[2].gameObject.SetActive(true);
+            }
+            if (key.color == "PURPLE")
+            {
+                myKeysUI[3].gameObject.SetActive(true);
+            }
+        }
     }
 
 }
