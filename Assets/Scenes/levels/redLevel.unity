@@ -1168,6 +1168,26 @@ PrefabInstance:
       propertyPath: myInventoryUI
       value: 
       objectReference: {fileID: 921429027}
+    - target: {fileID: 7170848429453743032, guid: 85739d0ba6c9fa24a8f8e7d351f9ddb2,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170848429453743032, guid: 85739d0ba6c9fa24a8f8e7d351f9ddb2,
+        type: 3}
+      propertyPath: Priority
+      value: 194
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170848429453743032, guid: 85739d0ba6c9fa24a8f8e7d351f9ddb2,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170848429453743032, guid: 85739d0ba6c9fa24a8f8e7d351f9ddb2,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7913880655935290881, guid: 85739d0ba6c9fa24a8f8e7d351f9ddb2,
         type: 3}
       propertyPath: player
@@ -44185,7 +44205,7 @@ GameObject:
   - component: {fileID: 988414129}
   - component: {fileID: 988414128}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

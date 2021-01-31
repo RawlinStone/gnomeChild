@@ -487,6 +487,7 @@ MonoBehaviour:
     m_Bits: 769
   crosshairDistance: 2.5
   player: {fileID: 0}
+  audioAttach: {fileID: 0}
 --- !u!120 &7913880655935290880
 LineRenderer:
   m_ObjectHideFlags: 0

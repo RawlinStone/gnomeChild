@@ -77,6 +77,7 @@ public class RopeSystem : MonoBehaviour
             if (hit.collider != null)
             {
                 ropeAttached = true;
+
                 if (!ropePositions.Contains(hit.point))
                 {
                     ropePositions.Add(hit.point);
@@ -91,6 +92,7 @@ public class RopeSystem : MonoBehaviour
                 ropeAttached = false;
                 ropeJoint.enabled = false;
             }
+            
         }
 
         if (Input.GetMouseButton(1))
