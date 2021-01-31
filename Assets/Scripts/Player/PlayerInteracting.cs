@@ -86,7 +86,7 @@ public class PlayerInteracting : MonoBehaviour
                 else
                 {
                     //go to final place
-                    Debug.Log("Going to final destination");
+                    SceneManager.LoadScene("EndScene");
                 }
             }
             
