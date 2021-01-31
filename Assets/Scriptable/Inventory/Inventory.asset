@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb802f643a9fde45b421354cddeb30b, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  keys: []
+  keys:
+  - {fileID: 11400000, guid: 5c677abf0ce6dc84692eaf61b721a711, type: 2}
+  - {fileID: 11400000, guid: 8a01771a7c823c645b0976944a7d63d9, type: 2}
+  - {fileID: 11400000, guid: 7fbc0639b72bf1040833009b308d71c6, type: 2}
   gems: []

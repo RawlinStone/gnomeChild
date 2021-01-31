@@ -393,12 +393,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  crouchSpeed: 0
+  crouchSpeed: 1
   jumpForce: 5
   isGrounded: 1
   myAnimator: {fileID: 7913880655935290884}
   myRenderer: {fileID: 7913880655935290887}
-  myCollider: {fileID: 0}
   crouch: 0
   jump: 0
   scaleInitial: {x: 1, y: 1, z: 1}

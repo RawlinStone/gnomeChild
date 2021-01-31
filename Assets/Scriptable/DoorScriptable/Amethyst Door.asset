@@ -19,3 +19,4 @@ MonoBehaviour:
   isOpen: 0
   keyNeeded: {fileID: 11400000, guid: 5c677abf0ce6dc84692eaf61b721a711, type: 2}
   levelName: purpleLevel
+  gemsBig: []
