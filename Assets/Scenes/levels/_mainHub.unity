@@ -7880,6 +7880,7 @@ MonoBehaviour:
   myRenderer: {fileID: 296482658}
   playerInventory: {fileID: 11400000, guid: 7791ff407172596479917ec3ae0ded48, type: 2}
   doorOpenSprite: {fileID: 21300000, guid: 5503371d09cb5bb4292fe87ab4a86a4f, type: 3}
+  bigDoorSprites: []
 --- !u!61 &296482661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8166,6 +8167,7 @@ MonoBehaviour:
   myRenderer: {fileID: 587710751}
   playerInventory: {fileID: 11400000, guid: 7791ff407172596479917ec3ae0ded48, type: 2}
   doorOpenSprite: {fileID: 21300000, guid: 5503371d09cb5bb4292fe87ab4a86a4f, type: 3}
+  bigDoorSprites: []
 --- !u!61 &587710754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8376,6 +8378,8 @@ GameObject:
   m_Component:
   - component: {fileID: 772980289}
   - component: {fileID: 772980288}
+  - component: {fileID: 772980291}
+  - component: {fileID: 772980290}
   m_Layer: 0
   m_Name: door_big
   m_TagString: Untagged
@@ -8441,12 +8445,60 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772980287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02054882, y: 1.06, z: 2}
-  m_LocalScale: {x: 1.9351977, y: 1.9351977, z: 0.6450659}
+  m_LocalPosition: {x: 0.02054882, y: 0.88, z: 2}
+  m_LocalScale: {x: 1.606214, y: 1.606214, z: 0.5354047}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &772980290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772980287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d772dc3e74254468434d3c7ae86bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myItem: {fileID: 11400000, guid: e0c0cbd6dbddcf94db572837be358410, type: 2}
+  myRenderer: {fileID: 772980288}
+  playerInventory: {fileID: 11400000, guid: 7791ff407172596479917ec3ae0ded48, type: 2}
+  doorOpenSprite: {fileID: 21300000, guid: b53efffba240ddb4c974478e6e4c0f21, type: 3}
+  bigDoorSprites:
+  - {fileID: 21300000, guid: 2434d8949a3070f4ab8930a95e9f83ee, type: 3}
+  - {fileID: 21300000, guid: 3c6d92d9f36b8c34da56527ec9f6535b, type: 3}
+  - {fileID: 21300000, guid: 310d2ec3ec0463244b8f9fe4a8b77034, type: 3}
+  - {fileID: 21300000, guid: 22a4039df48bcdf48b736f2f14ef7d49, type: 3}
+  - {fileID: 21300000, guid: 4d359c58a282f684a922bc6311ce460f, type: 3}
+--- !u!61 &772980291
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772980287}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0020307302, y: 0.0121843815}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0322497, y: 1.1825244}
+  m_EdgeRadius: 0
 --- !u!1001 &780340967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9180,6 +9232,7 @@ MonoBehaviour:
   myRenderer: {fileID: 1157424721}
   playerInventory: {fileID: 11400000, guid: 7791ff407172596479917ec3ae0ded48, type: 2}
   doorOpenSprite: {fileID: 21300000, guid: 5503371d09cb5bb4292fe87ab4a86a4f, type: 3}
+  bigDoorSprites: []
 --- !u!61 &1157424724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9768,6 +9821,7 @@ MonoBehaviour:
   myRenderer: {fileID: 1496594320}
   playerInventory: {fileID: 11400000, guid: 7791ff407172596479917ec3ae0ded48, type: 2}
   doorOpenSprite: {fileID: 21300000, guid: 5503371d09cb5bb4292fe87ab4a86a4f, type: 3}
+  bigDoorSprites: []
 --- !u!61 &1496594323
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10083,6 +10137,7 @@ MonoBehaviour:
   myRenderer: {fileID: 1625328764}
   playerInventory: {fileID: 11400000, guid: 7791ff407172596479917ec3ae0ded48, type: 2}
   doorOpenSprite: {fileID: 21300000, guid: 5503371d09cb5bb4292fe87ab4a86a4f, type: 3}
+  bigDoorSprites: []
 --- !u!61 &1625328763
 BoxCollider2D:
   m_ObjectHideFlags: 0
