@@ -18,3 +18,4 @@ MonoBehaviour:
   color: RED
   isOpen: 0
   keyNeeded: {fileID: 11400000, guid: 8a01771a7c823c645b0976944a7d63d9, type: 2}
+  levelName: redLevel
