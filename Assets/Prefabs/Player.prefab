@@ -486,7 +486,7 @@ MonoBehaviour:
   ropeLayerMask:
     serializedVersion: 2
     m_Bits: 769
-  crosshairDistance: 2.5
+  crosshairDistance: 2.75
   player: {fileID: 0}
 --- !u!120 &7913880655935290880
 LineRenderer:
