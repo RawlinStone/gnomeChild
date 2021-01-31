@@ -60,7 +60,8 @@ public class RopeSystem : MonoBehaviour
         if(Input.GetMouseButton(0) && ropeAttached)
         {
             rappel = true;
-            this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+            if(ropeHingeAnchorSprite.transform.position.y > transform.position.y)
+                this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
             transform.position = Vector2.MoveTowards(transform.position, ropeHingeAnchorSprite.transform.position, 0.03f);
         }
         else
