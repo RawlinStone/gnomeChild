@@ -20,6 +20,8 @@ public class RopeSystem : MonoBehaviour
     private List<Vector2> ropePositions = new List<Vector2>();
     private bool distanceSet;
     public static bool rappel;
+    [SerializeField]
+    private float crosshairDistance = 2.5f;
 
     private void Awake()
     {
@@ -60,8 +62,8 @@ public class RopeSystem : MonoBehaviour
         if (!crosshairSprite.enabled)
             crosshairSprite.enabled = true;
 
-        var x = transform.position.x + 1f * Mathf.Cos(aimAngle);
-        var y = transform.position.y + 1f * Mathf.Sin(aimAngle);
+        var x = transform.position.x + crosshairDistance * Mathf.Cos(aimAngle);
+        var y = transform.position.y + crosshairDistance * Mathf.Sin(aimAngle);
 
         var crossHairPosition = new Vector3(x, y, 0);
         crosshair.transform.position = crossHairPosition;
