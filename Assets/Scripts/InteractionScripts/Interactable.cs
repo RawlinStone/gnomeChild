@@ -33,6 +33,7 @@ public class Interactable : MonoBehaviour
         }
         else if (myItem.type == "DOOR")
         {
+            
             if (myItem.isOpen)
             {
                 OpenDoor();
