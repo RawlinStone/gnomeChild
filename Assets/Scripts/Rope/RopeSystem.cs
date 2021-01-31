@@ -51,7 +51,23 @@ public class RopeSystem : MonoBehaviour
 
         HandleInput(aimDirection);
         UpdateRopePositions();
+        rappelling();
 
+    }
+
+    private void rappelling()
+    {
+        if(Input.GetMouseButton(0) && ropeAttached)
+        {
+            rappel = true;
+            this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+            transform.position = Vector2.MoveTowards(transform.position, ropeHingeAnchorSprite.transform.position, 0.05f);
+        }
+        else
+        {
+            rappel = false;
+            this.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+        }
     }
 
     private void SetCrosshairPosition(float aimAngle)
@@ -99,18 +115,6 @@ public class RopeSystem : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             ResetRope();
-        }
-
-        if (Input.GetKey("q") && ropeAttached)
-        {
-            rappel = true;
-            this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-            transform.position = Vector2.MoveTowards(transform.position, ropeHingeAnchorSprite.transform.position, 0.05f);
-        }
-        else
-        {
-            rappel = false;
-            this.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
         }
     }
     
