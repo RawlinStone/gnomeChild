@@ -57,7 +57,7 @@ public class RopeSystem : MonoBehaviour
 
     private void rappelling()
     {
-        if(Input.GetKey("q") && ropeAttached)
+        if(Input.GetMouseButton(0) && ropeAttached)
         {
             rappel = true;
             this.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
