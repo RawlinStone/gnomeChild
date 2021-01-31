@@ -96,4 +96,6 @@ public class Interactable : MonoBehaviour
     {
         ps.Play(); 
     }
+
+    
 }

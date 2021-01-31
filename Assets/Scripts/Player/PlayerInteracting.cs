@@ -66,7 +66,7 @@ public class PlayerInteracting : MonoBehaviour
                 {
                     if(currentInteractable.gemsBig.Count >= 4)
                     {
-                        currentInteractable.isOpen = true; 
+                        currentInteractable.isOpen = true;
                         overworldObject.GetComponent<Interactable>().OpenDoor();
                         overworldObject.GetComponent<Interactable>().PlayParticle();
                     }
