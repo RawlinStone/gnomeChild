@@ -6,10 +6,8 @@ using UnityEngine.SceneManagement;
 public class Options : MonoBehaviour
 {
     public Inventory inventory;
-    public void Resume()
-    {
-        
-    }
+    public GameObject creditsPage;
+    
 
     public void MainMenu()
     {
@@ -26,5 +24,14 @@ public class Options : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit(); 
+    }
+
+    public void OpenCredits()
+    {
+        creditsPage.SetActive(true);
+    }
+    public void CloseCredits()
+    {
+        creditsPage.SetActive(false);
     }
 }
