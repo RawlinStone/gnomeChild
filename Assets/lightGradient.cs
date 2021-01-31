@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
+
 public class lightGradient : MonoBehaviour
 {
+    // Interpolate light color between two colors back and forth
     float duration = 1.0f;
     Color color0 = Color.yellow;
     Color color1 = Color.cyan;
 
-    Light lt;
+    Light2D lt;
 
-    // Start is called before the first frame update
     void Start()
     {
-        lt = GetComponent<Light>();
+        lt = GetComponent<Light2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // set light color
         float t = Mathf.PingPong(Time.time, duration) / duration;
         lt.color = Color.Lerp(color0, color1, t);
     }
