@@ -10,6 +10,7 @@ public class Interactable : MonoBehaviour
     public Inventory playerInventory;
     public Sprite doorOpenSprite;
     public List<Sprite> bigDoorSprites;
+    public ParticleSystem ps;
     
 
     private void Start()
@@ -89,5 +90,10 @@ public class Interactable : MonoBehaviour
     public void OpenDoor()
     {
         myRenderer.sprite = doorOpenSprite;
+    }
+
+    public void PlayParticle()
+    {
+        ps.Play(); 
     }
 }

@@ -15,6 +15,7 @@ public class PlayerInteracting : MonoBehaviour
     public InventoryUI myInventoryUI;
     public Sprite defaultKey;
     public List<Sprite> bigDoorSprites;
+    
 
     void Start()
     {
@@ -50,6 +51,7 @@ public class PlayerInteracting : MonoBehaviour
                     //open door
                     currentInteractable.isOpen = true;
                     overworldObject.GetComponent<Interactable>().OpenDoor();
+                    overworldObject.GetComponent<Interactable>().PlayParticle(); 
                     HideInteraction();
 
                 }
@@ -66,6 +68,7 @@ public class PlayerInteracting : MonoBehaviour
                     {
                         currentInteractable.isOpen = true; 
                         overworldObject.GetComponent<Interactable>().OpenDoor();
+                        overworldObject.GetComponent<Interactable>().PlayParticle();
                     }
                     else
                     {
