@@ -117,15 +117,20 @@ TextureImporter:
       name: cave_tiles_purple_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 64
-        width: 30
-        height: 30
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -9, y: 13}
+        - {x: -13, y: 11}
+        - {x: -13, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 13}
       tessellationDetail: 0
       bones: []
       spriteID: 54142db31f256bc40800000000000000
@@ -141,12 +146,16 @@ TextureImporter:
         x: 32
         y: 64
         width: 32
-        height: 30
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 13}
+        - {x: -16, y: 13}
       tessellationDetail: 0
       bones: []
       spriteID: e72358ff157fc4010800000000000000
@@ -161,13 +170,18 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 64
-        width: 30
-        height: 30
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: 13}
+        - {x: -16, y: -16}
+        - {x: 13, y: -16}
+        - {x: 13, y: 9}
+        - {x: 11, y: 13}
       tessellationDetail: 0
       bones: []
       spriteID: 67b1b5f9578cf3990800000000000000
@@ -186,9 +200,13 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 2, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -13, y: 16}
+        - {x: -13, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 17636510268fe9460800000000000000
@@ -228,9 +246,13 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 2, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 13, y: -16}
+        - {x: 13, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: ab6def02bf292f050800000000000000
@@ -243,15 +265,21 @@ TextureImporter:
       name: cave_tiles_purple_6
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 30
-        height: 30
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -13, y: 16}
+        - {x: -13, y: -9}
+        - {x: -12, y: -11}
+        - {x: -10, y: -13}
+        - {x: 16, y: -13}
+        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 805fce0a92b4dd9d0800000000000000
@@ -265,14 +293,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 2
+        y: 0
         width: 32
-        height: 30
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -13}
+        - {x: 16, y: -13}
+        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 08439e81220856370800000000000000
@@ -286,14 +318,20 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 2
-        width: 30
-        height: 30
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -13}
+        - {x: 9, y: -13}
+        - {x: 11, y: -12}
+        - {x: 13, y: -10}
+        - {x: 13, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 633fe75bfdae76650800000000000000
