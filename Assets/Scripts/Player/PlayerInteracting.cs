@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerInteracting : MonoBehaviour
 {
@@ -51,7 +53,7 @@ public class PlayerInteracting : MonoBehaviour
                 }
                 else if (currentInteractable.isOpen)
                 {
-                    Debug.Log("Go to next area");
+                    SceneManager.LoadScene(currentInteractable.levelName); 
                 }
             }
             
