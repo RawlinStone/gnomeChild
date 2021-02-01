@@ -16,5 +16,14 @@ public class Item : ScriptableObject
     public string levelName;
     public List<Item> gemsBig;
 
+    public void ResetDoors()
+    {
+        if(color != "BROWN" && type == "DOOR")
+        {
+            isOpen = false;
+            gemsBig.Clear(); 
+        }
+    }
+
    
 }

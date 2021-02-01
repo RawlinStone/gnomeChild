@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2770,6 +2770,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 7791ff407172596479917ec3ae0ded48, type: 2}
   creditsPage: {fileID: 677314427}
+  myItems:
+  - {fileID: 11400000, guid: fbb7014813d5c734990955834e94fafe, type: 2}
+  - {fileID: 11400000, guid: 3790326acbf5bfb4ba04e2592a713783, type: 2}
+  - {fileID: 11400000, guid: 962da00b3251fe04eae5b6315ded39c8, type: 2}
+  - {fileID: 11400000, guid: 1dfa6f5824b86434cbe408e9f09add9b, type: 2}
+  - {fileID: 11400000, guid: e0c0cbd6dbddcf94db572837be358410, type: 2}
 --- !u!1 &1709731086
 GameObject:
   m_ObjectHideFlags: 0

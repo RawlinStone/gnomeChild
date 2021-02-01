@@ -16,7 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: f9db5deae6e83a34a9d467c008f833a5, type: 3}
   type: DOOR
   color: RED
-  isOpen: 0
+  isOpen: 1
   keyNeeded: {fileID: 11400000, guid: 8a01771a7c823c645b0976944a7d63d9, type: 2}
   levelName: redLevel
-  gemsBig: []
+  gemsBig:
+  - {fileID: 11400000, guid: 3ba6adc9b38d7504db181a40033d5bce, type: 2}
