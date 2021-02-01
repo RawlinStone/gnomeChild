@@ -489,7 +489,7 @@ MonoBehaviour:
   crosshairDistance: 2.75
   player: {fileID: 0}
   myClips:
-  - {fileID: 8300000, guid: 172096b1ff55fce4a8a4450679bb069e, type: 3}
+  - {fileID: 8300000, guid: acddd98487da98244b3a19c966b70db0, type: 3}
   - {fileID: 8300000, guid: 282082c9fc83fff47b217ed9ed0d0d38, type: 3}
   audioSource: {fileID: 7783033898095326197}
 --- !u!120 &7913880655935290880
@@ -656,8 +656,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
