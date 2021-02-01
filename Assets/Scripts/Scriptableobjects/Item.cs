@@ -18,7 +18,7 @@ public class Item : ScriptableObject
 
     public void ResetDoors()
     {
-        if(color != "BROWN" && type == "DOOR")
+        if(color != "BROWN")
         {
             isOpen = false;
             gemsBig.Clear(); 
