@@ -16,7 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: f4ec5c4f175eb0c48992df6ea2afd046, type: 3}
   type: BIG
   color: 
-  isOpen: 0
+  isOpen: 1
   keyNeeded: {fileID: 0}
   levelName: 
-  gemsBig: []
+  gemsBig:
+  - {fileID: 11400000, guid: 3ba6adc9b38d7504db181a40033d5bce, type: 2}

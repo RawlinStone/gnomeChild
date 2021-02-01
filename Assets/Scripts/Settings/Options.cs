@@ -7,6 +7,7 @@ public class Options : MonoBehaviour
 {
     public Inventory inventory;
     public GameObject creditsPage;
+    public List<Item> myItems;
     
 
     public void MainMenu()
@@ -18,6 +19,10 @@ public class Options : MonoBehaviour
     public void StartGame()
     {
         inventory.ClearInventory(); 
+        foreach(Item i in myItems)
+        {
+            i.ResetDoors();
+        }
         SceneManager.LoadScene("_mainHub"); 
     }
 
